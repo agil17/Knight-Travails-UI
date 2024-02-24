@@ -1,0 +1,31 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.chessGrid {
+  width: 600px;
+  height: 600px;
+  border: solid black 1px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.square {
+  border: solid black 1px;
+  display: grid;
+  place-items: center;
+}
+
+.square.gray {
+  background: gray;
+}
+
+.form-controls-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

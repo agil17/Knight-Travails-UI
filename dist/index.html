@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="output-container"></div>
+    <div class="chessGrid">
+    </div>
+    <form>
+      <div class="form-controls">
+        <input type="radio" name="input-square" id="input-square-start" value="start" checked>
+        <label for="start-x">Start-X</label>
+        <input type="number" name="start-x" id="start-x" min="0" max="7" value=0 required disabled/>
+        <label for="start-y">Start-Y</label>
+        <input type="number" name="start-y" id="start-y" min="0" max="7" value=0 required disabled/>
+      </div>
+      <div class="form-controls">
+        <input type="radio" name="input-square" id="input-square-target" value="target">
+        <label for="target-x">Target-X</label>
+        <input type="number" name="target-x" id="target-x" min="0" max="7" value=1 required disabled/>
+        <label for="target-y">Target-Y</label>
+        <input type="number" name="target-y" id="target-y" min="0" max="7" value=1 required disabled/>
+      </div>
+      <div class="form-controls-btns">
+        <button type="reset">Reset</button>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  <script defer src="bundle.js"></script></body>
+</html>
