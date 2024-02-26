@@ -1,9 +1,9 @@
 import { knightMoves } from "./functions";
-import { resetRedSquares } from "./domManipulation";
+import { buildGameBoard, changeSquareColorEvent, resetRedSquares } from "./domManipulation";
 
 function setResetBtnEvent() {
   const reset = document.querySelector("button");
-  reset.addEventListener("click", resetRedSquares);
+  reset.addEventListener("click", buildGameBoard);
 }
 
 function printPath(path, steps) {
@@ -11,13 +11,14 @@ function printPath(path, steps) {
   output.textContent = "";
   const squares = document.querySelectorAll(".square");
   for (let i = 1; i < path.length - 1; i++) {
-    let row = path[i][0];
-    let col = path[i][1];
+    const row = path[i][0];
+    const col = path[i][1];
     squares.forEach((element) => {
       if(parseInt(element.dataset.row) === row && parseInt(element.dataset.col) === col) {
         element.style.backgroundColor = "red";
         element.textContent = `${i}`;
       }
+      element.removeEventListener("click", changeSquareColorEvent)
     });
   }
   output.textContent = `You made it in ${steps} steps!`

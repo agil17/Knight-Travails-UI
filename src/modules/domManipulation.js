@@ -1,8 +1,8 @@
 function resetRedSquares() {
   const squares = document.querySelectorAll(".square");
   squares.forEach((element) => {
-    let row = parseInt(element.dataset.row);
-    let col = parseInt(element.dataset.col);
+    const row = parseInt(element.dataset.row);
+    const col = parseInt(element.dataset.col);
     element.style.backgroundColor = (row + col) % 2 === 0 ? "gray" : null;
     element.textContent = "";
   });
@@ -15,8 +15,8 @@ function resetSquares(x, y) {
       parseInt(element.dataset.row) === parseInt(x) &&
       parseInt(element.dataset.col) === parseInt(y)
     ) {
-      let row = parseInt(element.dataset.row);
-      let col = parseInt(element.dataset.col);
+      const row = parseInt(element.dataset.row);
+      const col = parseInt(element.dataset.col);
       element.style.backgroundColor = (row + col) % 2 === 0 ? "gray" : null;
     }
   });
@@ -54,6 +54,9 @@ function changeSquareColorEvent() {
 
 const buildGameBoard = () => {
   const chessGrid = document.querySelector(".chessGrid");
+  while (chessGrid.firstChild) {
+    chessGrid.removeChild(chessGrid.firstChild);
+  }
   for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
       const square = document.createElement("div");
@@ -68,4 +71,4 @@ const buildGameBoard = () => {
   }
 };
 
-export { buildGameBoard, resetRedSquares };
+export { buildGameBoard, changeSquareColorEvent, resetRedSquares };
